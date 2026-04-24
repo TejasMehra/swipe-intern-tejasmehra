@@ -1,0 +1,76 @@
+.uploadBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  background: var(--blue-600);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+  white-space: nowrap;
+}
+
+.uploadBtn:hover {
+  background: var(--blue-700);
+}
+
+.uploadBtn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* full-page drag overlay */
+.dragOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.dragBox {
+  background: white;
+  border: 2px dashed var(--blue-500);
+  border-radius: var(--radius-xl);
+  padding: 48px 64px;
+  text-align: center;
+  animation: fadeSlideIn 0.2s ease;
+}
+
+.dragIcon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.dragBox p {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.dragBox span {
+  font-size: 14px;
+  color: var(--text-muted);
+}

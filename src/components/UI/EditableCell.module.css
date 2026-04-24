@@ -1,0 +1,87 @@
+.cell {
+  padding: 10px 14px;
+  cursor: pointer;
+  position: relative;
+  max-width: 200px;
+  transition: background 0.1s;
+}
+
+.cell:hover {
+  background: var(--gray-50);
+}
+
+.cell:hover .editHint {
+  opacity: 1;
+}
+
+.value {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* red cell when field is null/missing from Gemini extraction */
+.missing {
+  background: var(--red-50) !important;
+}
+
+.missing:hover {
+  background: var(--red-100) !important;
+}
+
+.missingLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--red-600);
+  background: var(--red-100);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.missingLabel::before {
+  content: '!';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  background: var(--red-600);
+  color: white;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* little pencil icon that appears on hover */
+.editHint {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.15s;
+  color: var(--gray-400);
+}
+
+/* input that appears when editing */
+.editing {
+  padding: 4px 8px;
+  background: white;
+  box-shadow: 0 0 0 2px var(--blue-500);
+  border-radius: var(--radius-sm);
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 13.5px;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: transparent;
+  padding: 4px 2px;
+}

@@ -1,0 +1,79 @@
+/* shared-table.css — imported by each tab, not a module so it can be global */
+
+.swipe-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.swipe-table thead th {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.swipe-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  animation: fadeSlideIn 0.25s ease both;
+  transition: background 0.1s;
+}
+
+/* stagger the animation delay based on row index */
+.swipe-table tbody tr:nth-child(1)  { animation-delay: 0.02s; }
+.swipe-table tbody tr:nth-child(2)  { animation-delay: 0.04s; }
+.swipe-table tbody tr:nth-child(3)  { animation-delay: 0.06s; }
+.swipe-table tbody tr:nth-child(4)  { animation-delay: 0.08s; }
+.swipe-table tbody tr:nth-child(5)  { animation-delay: 0.10s; }
+.swipe-table tbody tr:nth-child(6)  { animation-delay: 0.12s; }
+.swipe-table tbody tr:nth-child(n+7) { animation-delay: 0.14s; }
+
+.swipe-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.swipe-table tbody tr:hover {
+  background: var(--gray-50);
+}
+
+/* static (non-editable) cell */
+.swipe-table .cell-static {
+  padding: 10px 14px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* serial number / index column */
+.swipe-table .cell-index {
+  padding: 10px 14px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* amount column — right aligned, monospaced */
+.swipe-table .cell-amount {
+  padding: 10px 14px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* missing-row highlight — entire row has a faint red tint */
+.swipe-table tbody tr.row-has-missing {
+  background: #fff8f8;
+}
+
+.swipe-table tbody tr.row-has-missing:hover {
+  background: #fff0f0;
+}
