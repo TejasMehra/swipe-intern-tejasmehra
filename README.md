@@ -1,4 +1,4 @@
-An AI-powered invoice management tool built for the Swipe assignment. Drop in any invoice — PDF, image, or Excel — and the app extracts, organizes, and syncs all the data across three tabs in real time.
+An AI-powered invoice management tool built for the Swipe assignment. Drop in any invoice - PDF, image, or Excel - and the app extracts, organizes, and syncs all the data across three tabs in real time.
 
 ![Swipe](https://getswipe.azureedge.net/getswipe/images/logo.svg)
 
